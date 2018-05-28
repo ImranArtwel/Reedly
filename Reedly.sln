@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reedly", "Reedly\Reedly.csproj", "{F73FCA13-2948-4DD1-85A7-2C26D6D702EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reedly.Tests", "Reedly.Tests\Reedly.Tests.csproj", "{CD1A819E-D5B6-4601-BE79-CB8846B98E36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F73FCA13-2948-4DD1-85A7-2C26D6D702EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73FCA13-2948-4DD1-85A7-2C26D6D702EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73FCA13-2948-4DD1-85A7-2C26D6D702EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73FCA13-2948-4DD1-85A7-2C26D6D702EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1A819E-D5B6-4601-BE79-CB8846B98E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1A819E-D5B6-4601-BE79-CB8846B98E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1A819E-D5B6-4601-BE79-CB8846B98E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1A819E-D5B6-4601-BE79-CB8846B98E36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46D4B402-1D80-408F-AD10-1A83E95EED3B}
+	EndGlobalSection
+EndGlobal
