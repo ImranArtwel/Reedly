@@ -259,6 +259,10 @@
     <Compile Include="Migrations\201805261105309_AddNewMovieModel.Designer.cs">
       <DependentUpon>201805261105309_AddNewMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806091421407_DisplayMovieListandDetails.cs" />
+    <Compile Include="Migrations\201806091421407_DisplayMovieListandDetails.Designer.cs">
+      <DependentUpon>201806091421407_DisplayMovieListandDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -333,6 +337,7 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -392,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805261105309_AddNewMovieModel.resx">
       <DependentUpon>201805261105309_AddNewMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806091421407_DisplayMovieListandDetails.resx">
+      <DependentUpon>201806091421407_DisplayMovieListandDetails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

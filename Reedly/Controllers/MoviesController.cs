@@ -32,6 +32,12 @@ namespace Reedly.Controllers
             var movies = _context.Movies.Include(c => c.Genre).ToList();
             return View(movies);
         }
+        public ViewResult Details(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            return View(movie);
+        }
 
       
     }

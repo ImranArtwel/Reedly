@@ -1,6 +1,7 @@
 ﻿@* Because the movies are of IEnumerable type, a reference is required*@
 
 @model IEnumerable<Reedly.Models.Movie>
+
 @{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +20,7 @@
             @foreach(var movie in Model)
             {
                 <tr>
-                <td>@movie.Name</td>
+                <td>@Html.ActionLink(movie.Name, "Details","Movies", new {id = movie.Id }, null)</td>
                 <td>@movie.Genre.Name</td>
                 </tr>
             }
