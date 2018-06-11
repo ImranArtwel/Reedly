@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Reedly.ViewModels;
 
 namespace Reedly.Controllers
 {
@@ -41,6 +42,52 @@ namespace Reedly.Controllers
                 return Content("Customer with Id = {0} does not exist" + id);
             else
                 return View(customer);
+        }
+
+        //adding a new customer
+        public ActionResult CustomerForm()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new CustomerFormViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(viewModel);
+        }
+        
+        //saving the new customer
+        [HttpPost]
+        public ActionResult Save(Customer customer)
+        {
+            if(customer.Id == 0)
+              _context.Customers.Add(customer);
+            else
+            {
+                var existingCustomer = _context.Customers.Single(c => c.Id == customer.Id);
+
+                existingCustomer.Name = customer.Name;
+                existingCustomer.Birthday = customer.Birthday;
+                existingCustomer.MembershipTypeId = customer.MembershipTypeId;
+                existingCustomer.isSubscribedToNewsLetter = customer.isSubscribedToNewsLetter;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index","Customers");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
         }
 
        
