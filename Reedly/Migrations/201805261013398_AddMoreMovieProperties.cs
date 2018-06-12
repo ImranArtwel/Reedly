@@ -19,6 +19,7 @@ namespace Reedly.Migrations
             DropColumn("dbo.Movies", "NumberInStock");
             DropColumn("dbo.Movies", "DateAdded");
             DropColumn("dbo.Movies", "ReleaseDate");
+            DropColumn("dbo.Movies", "Id");
         }
     }
 }

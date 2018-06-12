@@ -271,6 +271,10 @@
     <Compile Include="Migrations\201806111105327_EditAndSaveMovie.Designer.cs">
       <DependentUpon>201806111105327_EditAndSaveMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806121051538_AddGeneratedAttributeToMovieId.cs" />
+    <Compile Include="Migrations\201806121051538_AddGeneratedAttributeToMovieId.Designer.cs">
+      <DependentUpon>201806121051538_AddGeneratedAttributeToMovieId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -418,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806111105327_EditAndSaveMovie.resx">
       <DependentUpon>201806111105327_EditAndSaveMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806121051538_AddGeneratedAttributeToMovieId.resx">
+      <DependentUpon>201806121051538_AddGeneratedAttributeToMovieId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
