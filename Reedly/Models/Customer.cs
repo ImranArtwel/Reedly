@@ -10,11 +10,13 @@ namespace Reedly.Models
     {
         public int Id { get; set; }
         
+        [Min18YrsIfMember]
         public DateTime? Birthday { get; set; }
 
-        [Required] //means Name column is no longer nullable
+        [Required(ErrorMessage ="Please enter customer name.")] //means Name column is no longer nullable
         [StringLength(255)] //specify number of characters
         public string Name { get; set; }
+
         [Display(Name ="Subscribe To Newsletter")]
         public bool isSubscribedToNewsLetter { get; set; }
 
@@ -22,5 +24,7 @@ namespace Reedly.Models
 
          [Display(Name ="Membership Type")]
         public byte MembershipTypeId { get; set; } //foreign key
+
+       
     }
 }

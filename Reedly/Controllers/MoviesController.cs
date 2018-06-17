@@ -45,6 +45,7 @@ namespace Reedly.Controllers
             var genres = _context.Genres.ToList(); // get all genre types from db
             var viewModel = new MovieFormViewModel
             {
+                
                Genres = genres
             };
             return View("MovieForm",viewModel);
@@ -52,6 +53,7 @@ namespace Reedly.Controllers
 
        // save new movie to database
        [HttpPost]
+       [ValidateAntiForgeryToken]
        public ActionResult Save(Movie movie)
         {
             if(movie.Id == 0)

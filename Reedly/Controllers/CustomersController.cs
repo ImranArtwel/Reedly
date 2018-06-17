@@ -45,34 +45,54 @@ namespace Reedly.Controllers
         }
 
         //adding a new customer
-        public ActionResult CustomerForm()
+        public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
         }
         
         //saving the new customer
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
-            if(customer.Id == 0)
-              _context.Customers.Add(customer);
+            //check if model is valid
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer= customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+
+                };
+
+                return View("CustomerForm",viewModel);
+            }
+
             else
             {
-                var existingCustomer = _context.Customers.Single(c => c.Id == customer.Id);
+                if (customer.Id == 0)
+                    _context.Customers.Add(customer);
+                else
+                {
+                    var existingCustomer = _context.Customers.Single(c => c.Id == customer.Id);
 
-                existingCustomer.Name = customer.Name;
-                existingCustomer.Birthday = customer.Birthday;
-                existingCustomer.MembershipTypeId = customer.MembershipTypeId;
-                existingCustomer.isSubscribedToNewsLetter = customer.isSubscribedToNewsLetter;
+                    existingCustomer.Name = customer.Name;
+                    existingCustomer.Birthday = customer.Birthday;
+                    existingCustomer.MembershipTypeId = customer.MembershipTypeId;
+                    existingCustomer.isSubscribedToNewsLetter = customer.isSubscribedToNewsLetter;
+                }
+                _context.SaveChanges();
+
+                return RedirectToAction("Index", "Customers");
+
             }
-            _context.SaveChanges();
-
-            return RedirectToAction("Index","Customers");
+            
         }
 
         public ActionResult Edit(int id)

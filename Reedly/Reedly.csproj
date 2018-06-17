@@ -275,6 +275,14 @@
     <Compile Include="Migrations\201806121051538_AddGeneratedAttributeToMovieId.Designer.cs">
       <DependentUpon>201806121051538_AddGeneratedAttributeToMovieId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806170705292_AddFormValidationForBirthdateAndValidationMessages.cs" />
+    <Compile Include="Migrations\201806170705292_AddFormValidationForBirthdateAndValidationMessages.Designer.cs">
+      <DependentUpon>201806170705292_AddFormValidationForBirthdateAndValidationMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806170719144_ReplaceMagicNumbersFromMin18YrsModelWithStaticValuesInMembershipType.cs" />
+    <Compile Include="Migrations\201806170719144_ReplaceMagicNumbersFromMin18YrsModelWithStaticValuesInMembershipType.Designer.cs">
+      <DependentUpon>201806170719144_ReplaceMagicNumbersFromMin18YrsModelWithStaticValuesInMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -282,6 +290,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YrsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -425,6 +434,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806121051538_AddGeneratedAttributeToMovieId.resx">
       <DependentUpon>201806121051538_AddGeneratedAttributeToMovieId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806170705292_AddFormValidationForBirthdateAndValidationMessages.resx">
+      <DependentUpon>201806170705292_AddFormValidationForBirthdateAndValidationMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806170719144_ReplaceMagicNumbersFromMin18YrsModelWithStaticValuesInMembershipType.resx">
+      <DependentUpon>201806170719144_ReplaceMagicNumbersFromMin18YrsModelWithStaticValuesInMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

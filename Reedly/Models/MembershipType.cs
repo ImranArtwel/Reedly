@@ -12,5 +12,8 @@ namespace Reedly.Models
         public short SignUpFee { get; set; }          // not dealing with huge numbers
         public byte DurationInMonths { get; set; }
         public byte DiscountRate { get; set; }
+
+        public static readonly byte Unknown = 0;
+        public static readonly byte PayAsYouGo = 1;
     }
 }
