@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.ReleaseDate)
-        @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control", @Value = "1 Jan 0001" })
+        @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Movie.ReleaseDate)
     </div>
     <div class="form-group">
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.NumberInStock)
-        @Html.TextBoxFor(m => m.Movie.NumberInStock, new { @class = "form-control", @Value = "0" })
+        @Html.TextBoxFor(m => m.Movie.NumberInStock, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
     </div>
     @Html.HiddenFor(m => m.Movie.Id)

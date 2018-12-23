@@ -12,7 +12,7 @@
     @Html.ValidationSummary()
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" , @Value = "John Doe" })
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Customer.Name)
 
     </div>
